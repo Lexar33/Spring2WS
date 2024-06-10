@@ -29,8 +29,7 @@ public class BaseDaoImpl<K, T> implements BaseDao<K, T> {
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<T> findByNamedQuery(String namedQueryName, Map<String, Object> parameters)
-            throws IllegalStateException {
+    public List<T> findByNamedQuery(String namedQueryName, Map<String, Object> parameters) throws IllegalStateException {
         Query q = getSession().createNamedQuery(namedQueryName);
         for (Map.Entry<String, Object> paramName : parameters.entrySet()) {
             q.setParameter(paramName.getKey(), paramName.getValue());

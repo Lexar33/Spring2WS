@@ -12,9 +12,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "T_CONTROL_ASIST_PARCIAL")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @XmlRootElement
 @NamedQueries({
         @NamedQuery(name = "TControlAsistParcial.findAll", query = "SELECT t FROM TControlAsistParcial t")
@@ -33,6 +30,9 @@ import javax.xml.bind.annotation.XmlRootElement;
                 + "( :anio IS NULL OR (:anio IS NOT NULL AND YEAR(t.fecha) = :anio)) "
                 + "ORDER BY t.fecha ASC")
 })
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TControlAsistParcial implements Serializable {
 
     private static final long serialVersionUID = 1L;
